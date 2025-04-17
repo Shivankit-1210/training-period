@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { addUser } from './UserReducer';
 import {  useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 
 
@@ -30,6 +31,7 @@ const Create = () => {
     e.preventDefault();
     const {name, email} = formData;
     dispatch(addUser({id:users[users.length -1].id +1, name, email}))
+    toast.success("User Added successfully !")
     navigate('/')
 
     // Clear form after submission
