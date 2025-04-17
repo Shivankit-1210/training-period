@@ -8,7 +8,7 @@ const Home = () => {
     
 
     const users = useSelector((state)=> state.users)
-    console.log(users)
+    console.log("hi", users)
   return (
     <div className=' w-[80%] flex flex-col'>
        <Link to="/create " className='cursor-pointer flex text-center bg-slate-800 w-18 p-1  rounded-sm border text-white justify-items-start '>Create +</Link >

@@ -1,4 +1,9 @@
 import React, { useState } from 'react';
+import { addUser } from './UserReducer';
+import {  useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Create = () => {
   const [formData, setFormData] = useState({
@@ -14,10 +19,18 @@ const Create = () => {
     }));
   };
 
+  const navigate = useNavigate();
+
+  //access users globally using useselector
+ const users = useSelector((state)=>state.users)
+
+  const dispatch =  useDispatch();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Creating user:', formData);
-    // Here you could dispatch a Redux action or make an API call
+    const {name, email} = formData;
+    dispatch(addUser({id:users[users.length -1].id +1, name, email}))
+    navigate('/')
 
     // Clear form after submission
     setFormData({ name: '', email: '' });
