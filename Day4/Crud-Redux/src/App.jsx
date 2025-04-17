@@ -1,13 +1,12 @@
-import './App.css'
+import "./App.css";
+import Home from "./Home";
 
 function App() {
-  
-
   return (
-    <>
-      <h1 className='underline'>HII</h1>
-    </>
-  )
+    <div className="w-full h-full flex item-center justify-center p-2 ">
+      <Home />
+    </div>
+  );
 }
 
-export default App
+export default App;
