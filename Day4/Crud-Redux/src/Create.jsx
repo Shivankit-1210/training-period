@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { addUser } from './UserReducer';
 import {  useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import toast from 'react-hot-toast';
+import {toast} from 'react-hot-toast';
 
 
 
@@ -46,7 +46,6 @@ const Create = () => {
           <label htmlFor="name" className="block text-sm font-medium mb-1">Name</label>
           <input
             type="text"
-            id="name"
             name="name"
             className="w-full border border-gray-300 p-2 rounded "
             value={formData.name}
@@ -60,7 +59,6 @@ const Create = () => {
           <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
           <input
             type="email"
-            id="email"
             name="email"
             className="w-full border border-gray-300 p-2 rounded "
             value={formData.email}
