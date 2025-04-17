@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { updateUser } from './UserReducer';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 
 
@@ -40,7 +41,7 @@ const Update = () => {
       name: EditData.name,
       email: EditData.email, 
     }))
-
+   toast.success("User Updated successfully 😊")
     navigate("/")
     // Clear form after submission
     setFormData({ name: '', email: '' });

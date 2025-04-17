@@ -1,12 +1,23 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch} from "react-redux";
 import { Link } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import { deleteUser } from "./UserReducer";
 
 const Home = () => {
   const users = useSelector((state) => state.users);
-  console.log("hi", users);
-  return (
+  const dispatch = useDispatch();
+
+  const handleDelete=(id)=>{
+    console.log("delete inside")
+    const duser = users.find(user=>user.id == id);
+    dispatch(deleteUser({
+      id: id,
+      name: duser.name,
+      email: duser.email,
+    }))
+  }
+    return (
     <div className=" w-[100%] flex flex-col ">
       <Toaster />
       <Link
@@ -38,7 +49,7 @@ const Home = () => {
                   >
                     Edit
                   </Link>
-                  <button className="bg-red-500 hover:bg-red-600 p-1 m-1 rounded-sm cursor-pointer">
+                  <button className="bg-red-500 hover:bg-red-600 p-1 m-1 rounded-sm cursor-pointer" onClick={()=>handleDelete(user.id)}>
                     Delete
                   </button>
                 </td>
