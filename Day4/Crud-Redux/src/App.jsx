@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <h1>HII</h1>
+      <h1 className='underline'>HII</h1>
     </>
   )
 }
