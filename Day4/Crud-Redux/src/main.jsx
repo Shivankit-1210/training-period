@@ -5,6 +5,7 @@ import {configureStore} from '@reduxjs/toolkit'
 import App from './App.jsx'
 import UserReducer from './UserReducer'
 
+//global store to access state data globally
 const store = configureStore({
   reducer: {
     users: UserReducer 
@@ -14,7 +15,8 @@ const store = configureStore({
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Provider store={store}>
+    {/* Wrap our app inside Provider component */}
+    <Provider store={store}> 
     <App />
     </Provider>
   </StrictMode>,

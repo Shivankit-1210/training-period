@@ -30,7 +30,8 @@ const Create = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const {name, email} = formData;
-    dispatch(addUser({id:users[users.length -1].id +1, name, email}))
+    dispatch(addUser({id:users.length != 0 ? `${users[users.length -1].id +1}` : 1, name, email}))
+    // dispatch(addUser({id:users[users.length -1].id +1, name, email}))
     toast.success("User Added successfully !")
     navigate('/')
 
