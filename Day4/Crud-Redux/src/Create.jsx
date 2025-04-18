@@ -84,7 +84,7 @@ const Create = () => {
         <div>
           <label htmlFor="email" className="block text-sm font-medium mb-1">Email</label>
           <input
-            type="email"
+            // type="email"
             name="email"
             className="w-full border border-gray-300 p-2 rounded "
             value={formData.email}

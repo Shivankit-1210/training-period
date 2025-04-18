@@ -13,7 +13,7 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <div className="w-full h-full flex item-center justify-center p-2 flex-col">
-        <h2 className="font-bold text-center text-white text-xl underline">
+        <h2 className="font-bold text-center text-white md:text-xl text-sm underline">
           CRUD APP USING REDUX TOOLKIT{" "}
         </h2>
         <Routes>
