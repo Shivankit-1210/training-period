@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch} from "react-redux";
 import { Link } from "react-router-dom";
-import { Toaster } from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 import { deleteUser } from "./UserReducer";
 
 const Home = () => {
@@ -16,16 +16,20 @@ const Home = () => {
       name: duser.name,
       email: duser.email,
     }))
+    toast.error("User deleted ")
   }
     return (
-    <div className=" w-[100%] flex flex-col ">
+    <div className=" w-[100%] flex flex-col h-[530px]">
       <Toaster />
+      <div className="flex flex-col item-center justify-center gap-12 ">
       <Link
         to="/create "
-        className="cursor-pointer flex text-center bg-slate-800 w-18 p-1 border-none hover:bg-slate-900  rounded-sm border rounded-md text-white justify-items-start "
+        className="cursor-pointer flex text-center bg-slate-500 w-24 p-1 border-none hover:bg-slate-900  rounded-sm border rounded-md text-white justify-items-start "
       >
-        Create +
+        Add User +
       </Link>
+      </div>
+      
       <div className="w-[100%]  flex item-center justify-center">
         <table className="m-2 bg-slate-300 w-[40%] border rounded-md">
           <thead className="border-slate-800 border-b bg-slate-200">
@@ -43,13 +47,20 @@ const Home = () => {
                 <td className="p-2">{user.name}</td>
                 <td className="p-2">{user.email}</td>
                 <td className="p-2">
+                  
+                <Link
+                    to={`/read/${user.id}`}
+                    className="bg-blue-400 hover:bg-blue-500 p-1 m-1 rounded-sm cursor-pointer transform transition-transform duration-100 hover:scale-105"
+                  >
+                    Read
+                  </Link>
                   <Link
                     to={`/edit/${user.id}`}
-                    className="bg-yellow-400 hover:bg-yellow-500 p-1 m-1 rounded-sm cursor-pointer"
+                    className="bg-yellow-400 hover:bg-yellow-500 p-1 m-1 rounded-sm cursor-pointer transition-transform duration-100 hover:scale-105"
                   >
                     Edit
                   </Link>
-                  <button className="bg-red-500 hover:bg-red-600 p-1 m-1 rounded-sm cursor-pointer" onClick={()=>handleDelete(user.id)}>
+                  <button className="bg-red-500 hover:bg-red-600 p-1 m-1 rounded-sm cursor-pointer transition-transform duration-100 hover:scale-105" onClick={()=>handleDelete(user.id)}>
                     Delete
                   </button>
                 </td>
