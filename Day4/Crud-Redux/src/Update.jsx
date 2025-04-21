@@ -48,7 +48,7 @@ const Update = () => {
   };
 
   return (
-    <div className="w-[30%] mx-auto mt-10 mb-[190px] p-6 bg-white rounded-2xl shadow-lg">
+    <div className="md:w-[40%] w-[70%] mx-auto mt-10 mb-[190px] p-6 bg-white rounded-2xl shadow-lg">
       <h2 className="text-2xl font-semibold mb-4 text-center">Update User</h2>
       <form onSubmit={handleUpdate} className="space-y-4">
         <div>
