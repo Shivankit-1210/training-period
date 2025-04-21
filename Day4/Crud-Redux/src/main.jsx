@@ -1,17 +1,19 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Provider} from 'react-redux'
-import {configureStore} from '@reduxjs/toolkit'
+// import {configureStore} from '@reduxjs/toolkit'
 import App from './App.jsx'
-import UserReducer from './UserReducer'
+import { store } from './store.jsx'
+// import UserReducer from './UserReducer'
 
 //global store to access state data globally
-const store = configureStore({
-  reducer: {
-    users: UserReducer 
+//make a comment for counter
+// const store = configureStore({
+//   reducer: {
+//     users: UserReducer 
 
-  }
-})
+//   }
+// })
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
