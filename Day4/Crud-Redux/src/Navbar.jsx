@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="bg-slate-600 p-4 text-white">
+    <nav className="bg-slate-600 p-4 text-white w-full">
       <div className="container mx-auto flex justify-between items-center">
         <div className="md:text-lg text-sm font-bold">Redux App</div>
         <div className="space-x-1 flex">

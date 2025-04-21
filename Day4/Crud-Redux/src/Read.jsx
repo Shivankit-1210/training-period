@@ -22,11 +22,11 @@ const Read = () => {
 
   return (
     <div className="h-[540px] flex items-center justify-center   p-4">
-      <div className="w-full max-w-md bg-white rounded-2xl shadow-lg p-8">
-        <h1 className="text-3xl font-bold text-center text-slate-600 mb-6">
+      <div className="w-full max-w-md bg-white rounded-2xl p-8">
+        <h1 className="md:text-3xl text-xl font-bold text-center text-slate-600 mb-6">
           User Details
         </h1>
-        <div className="space-y-4 text-lg text-gray-700">
+        <div className="space-y-4 md:text-lg text-gray-700">
           <div className="flex ">
             <span className="font-semibold">User ID:</span>
             <span className='ml-2'>{user.id}</span>
@@ -40,10 +40,10 @@ const Read = () => {
             <span className='ml-6'>{user.email}</span>
           </div>
         </div>
-        <div className="mt-8 flex justify-center">
+        <div className=" md:mt-8 mt-6 flex justify-center">
           <Link
             to="/"
-            className="px-6 py-2 bg-red-500 text-white rounded-lg font-medium hover:bg-red-600 transition duration-200"
+            className="md:px-6 md:py-2 px-3 py-1 bg-red-500 text-white rounded-lg font-medium hover:bg-red-600 transition duration-200"
           >
             Close
           </Link>
